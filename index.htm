@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>    
+    <title>个人中心</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="Stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="Stylesheet" href="css/jquery.layout.css" />
+
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.tree.js"></script>
+    <script type="text/javascript" src="js/jquery.tab.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        // body...
+        var data =[
+    {
+        "name": "系统设置",
+        "id": "0",
+        "pid": "0",
+        "isexpend":true,
+        "iconCls":"glyphicon-cog",
+        "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一",
+                "iconCls":"glyphicon-cog",
+                "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一1",
+                "iconCls":"glyphicon-cog",
+                "children": [
+                {
+                  "id": "1",
+                  "pid": "0",
+                  "name": "餐单一1",
+
+                }]
+            }]
+                
+            },
+            {
+                "id": "2",
+                "pid": "0",
+                "name": "餐单二",
+                "url":"http://www.baidu.com"
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            }
+        ]
+    },{
+        "name": "系统设置",
+        "id": "0",
+        "pid": "0",
+        "isexpend":true,
+        "iconCls":"glyphicon-cog",
+        "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一",
+                "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一1",
+                "iconCls":"glyphicon-cog"
+            }]
+                
+            },
+            {
+                "id": "2",
+                "pid": "0",
+                "name": "餐单二"
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "name": "餐单三"
+            }
+        ]
+    }
+];
+        $("#menu").navigation(data,"data");
+        $('.layout').height(document.body.clientHeight);
+        //$("#menu").navigation("navigation.htm","url");
+      });
+    </script>
+</head>
+<body>
+<!--布局-->
+<div class="layout">
+	<!--顶部-->
+   <div class="header">
+
+   </div>
+   <div class="contianer960">
+   <!--左侧-->
+   <div class="left">
+   		<div class="menu" id="menu">
+   			
+   		</div>
+   </div>
+   <!--右侧-->
+   <div class="right">
+   		<div class="tab" style="display:none">
+   			<ul><li><a>首页</a></li></ul>
+   		</div>
+        <h2><ul><li><a class="default">首页</a></li></ul></h2>
+        <div style="width:100% !important; height:100% !important">
+   		<iframe src="center.htm" id="mainFrame" width="100%" height="100%" border="none"></iframe>
+        </div>
+   </div>
+</div>
+   <div class="footer">
+        <center><p>&copy 2014</p></center>
+   </div>
+</div>
+</body>
+</html>
