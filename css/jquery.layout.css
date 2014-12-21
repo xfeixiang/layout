@@ -2,7 +2,10 @@
 html,body,.layout{
     overflow: hidden;
     width: 100%;
-    background: #777;
+    background: #eaeaea;
+}
+a{
+    text-decoration: none;
 }
 
 .layout{
@@ -28,7 +31,7 @@ html,body,.layout{
     width: auto;
     min-height: 500px;
     background: #777;
-    overflow: auto;
+    
     height: 90% !important;
     border-right: 1px solid #000;
     position: absolute;
@@ -38,7 +41,7 @@ html,body,.layout{
     background: #eaeaea;
     width: auto;
     overflow: none;
-    height: 90%;
+    height: 99% !important;
     position: absolute;
     right: 1px;
     left: 301px;
@@ -58,6 +61,10 @@ html,body,.layout{
     line-height: 25px;
     font-size: 20px;
 }
+.right h2 a{
+    color: #fff;
+    text-decoration: none;
+}
 .default:before{
     content: '  当前位置>';
     text-decoration: none;
@@ -70,11 +77,11 @@ html,body,.layout{
 .footer{
     width: 100%;
     position: absolute;
-    padding: 10px 0px;
+    
     background: #eaeaea;
     line-height: 5px;
     bottom: 0px;
-    display: none;
+    
 }
 .tab{
     line-height: 40px;
@@ -95,6 +102,15 @@ html,body,.layout{
 .tab ul li>a{
     padding: 5px 15px;
     background: #fff;
+}
+.menu{
+    height: 93% !important;
+    overflow: auto;
+}
+.menu-title{
+    line-height: 30px;
+    background: #fff;
+    padding: 5px;
 }
 .menu li,.men li ul li{
     list-style:none;

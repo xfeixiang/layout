@@ -1,20 +1,24 @@
-﻿$.fn.initTab = function  (url,title) {
-	// body...
-	var i = -1;
-	$(this).children('ul').children('li').each(function(index,element){
-		var title1 = $(this).children('a').html();
-		if(title1 == title) {			
-			//$(this).after('<li><a>'+ title +'</a></li>');			
-			//$(this).remove();
+﻿$.fn.extend({
+	initTab:function  (url,title,bootPath) {
+	bootPath = bootPath.substring(0, bootPath.length - 1);
+	var array = new Array();
+	array = bootPath.split(',');
+	array.pop();
+	array.reverse();
+	var path = "";
+	//alert(path);
+	for (var i = 0; i < array.length; i++) {
+		if(i == 0){
+			path+="<a class=\"default\">"+ array[i] +"</a>";
+		}else{
+			path+="<a>"+ array[i] +"</a>";
 		}
-	});
-	if(i < 0){
-		//$(this).children('ul').append('<li><a>'+ title +'</a></li>');
-	}	
-	//查找根目录
-	$('#menu').children('ul').find('li').each(function(){
-		//var select_title = $(this).attr('');
-
-	});
+	};
+	path+="<a>"+ title +"</a>";
+	
+	$('#jj').find('li').remove();
+	$('#jj').append('<li>'+path+'</li>');
+	console.log('测试输出');
 	document.getElementById('mainFrame').src = url;
 }
+}); 
