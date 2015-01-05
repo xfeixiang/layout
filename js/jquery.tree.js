@@ -1,31 +1,23 @@
 ﻿/*导航树插件*/
+
 var htmls = "";
 var bootpath = "";
-$.fn.extend(
-{
-	// body...
-	//params
-	//...
-	//funcbody
-	navigation:function(urlordata,type){		
+$.fn.extend ({
+	initTree:function(urlordata,type){		
 		switch(type){
 			case 'url':
-				$(this)._typeofUrl(urlordata,this);
+				return $(this)._typeofUrl(urlordata,this);
 			break;
 			case 'data':
-				$(this)._getParentLength(urlordata,this);
-				
-				$(this).append(htmls);
-				$(this)._setMenuPanel();
-		$(this)._setHiddeOrShowMenu();
-				//alert(htmls);
+				return $(this)._getParentLength(urlordata,this);				
+				return $(this).append(htmls);
+				return $(this)._setMenuPanel();
+				return $(this)._setHiddeOrShowMenu();
 			break;
 			default:
-				$(this)._typeofUrl(urlordata,this);
-				
+				return $(this)._typeofUrl(urlordata,this);				
 			break;			
 		}
-
 	},
 	_typeofUrl:function(url,obj){
 		$(obj).load(url,null,function(response,status,xhr){
@@ -35,8 +27,7 @@ $.fn.extend(
 	},
 	_typeofData:function(data,obj){				
 		//遍历树结构
-		htmls += "<ul>";	
-
+		htmls += '<ul>';
 		if(data != null && data.length > 0)	{
 		for (var i = 0; i < data.length; i++) {
 			var isexpend = data[i].isexpend;
@@ -46,37 +37,37 @@ $.fn.extend(
 			//alert($(obj).html());
 			//判断是否是父节点，如果相等则是 反之则否
 			if((data[i].pid == data[i].id)|| (data[i].children != null && data[i].children.length > 0)){				
-				htmls += "<li data-text=\""+ data[i].name +"\" isexpend=\""+ isexpend +"\"><span style=\"padding: 0 5px;\" class=\"glyphicon "+ data[i].iconCls +"\"></span>"+data[i].name;			
+				htmls += '<li data-text="'+ data[i].name + '"' + 'isexpend="'+ data[i].isexpend +'"><span style="' + 'padding: 0 5px; class=glyphicon + data[i].iconCls' +'"></span>'+data[i].name;			
 				if(data[i].children != null){
 					$(obj)._typeofData(data[i].children,obj);
 				}
 			} else {
-				htmls += "<li data-text=\""+ data[i].name +"\"><a link-href=\""+ data[i].url +"\">"+data[i].name+"</a></li>";	
+				htmls += '<li data-text="'+ data[i].name +'"><a link-href="'+ data[i].url +'">'+data[i].name+'</a></li>';	
 			}
 		}
 	} else {
 
 		//htmls += "<li><span class=\"glyphicon glyphicon-asterisk\"></span>"+data[i].name;			
 	}
-		htmls += "</li></ul>";
+		htmls += '</li></ul>';
 	},
 	_getParentLength:function(data,obj){
 		htmls+="<ul>";
 		for (var i = 0; i < data.length; i++) {
 			var isexpend = data[i].isexpend;
 			if(typeof(isexpend) == "undefined"){
-				isexpend = false;
+				isexpend = 'false';
 			}
 			//alert(data.iconCls);
-			htmls += "<li data-text=\""+ data[i].name +"\" isexpend=\""+ isexpend +"\"><span style=\"line-height:35px\"><div><span style=\"padding: 0 5px;\" class=\"glyphicon "+ data[i].iconCls +"\"></span>"+data[i].name+"<span class=\"glyphicon glyphicon-plus extend\"></span></div></span> ";						
+			htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-plus extend"></span></div></span> ';						
 			if(data[i].children!=null && data[i].children.length > 0){
 				$(this)._typeofData(data[i].children,obj);
 			}
-			htmls+="</li>";			
+			htmls+='</li>';			
 			//alert(htmls);
 		};
 
-		htmls+="</ul>";
+		htmls+='</ul>';
 		
 	},
 	_setMenuPanel:function(){
@@ -137,7 +128,7 @@ $.fn.extend(
 				//alert("1");
 				var p = $(this).attr('isexpend');
 				//alert(p);
-				if(p != 'undefined'){
+				if(typeof(p) != 'undefined'){
 					//alert($(this).children('ul').length);
 					//alert(p);
 					if(p == 'true'){
@@ -183,26 +174,26 @@ $.fn.extend(
 			return false;	
 		});
 	},
-	_getparentP(obj){
-		var par = $(obj).parent('ul').parent('li');		
+	_getparentP:function(obj){
+		var par = $(obj).parent('ul').parent('li');
 		//有父节点
-		if(par != 'undefined'){			
-			bootpath+=par.attr('data-text')+">,";
-			//alert(bootpath);
+		if(typeof(par) != 'undefined'){			
+			bootpath += par.attr('data-text')+'>,';
+			
 			par.each(function(i,j){
 				$(this)._getparentP(this);
 			});			
 		}else{
-			bootpath=par.attr('data-text');
+			bootpath = par.attr('data-text');
 		}
 	},
-	_pushMenuToArray(array){
+	_pushMenuToArray:function(array){
 		var tmp = "";
 		for (var i = 0; i < array.length-1; i++) {
 			tmp = array[i];
 			array[i]= array[i+1];
 			array[i+1] = tmp;
 		};
-		alert(array);
+		//alert(array);
 	}
 });

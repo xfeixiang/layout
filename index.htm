@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>    
     <title>个人中心</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link type="text/css" rel="Stylesheet" href="css/bootstrap.min.css" />
     <link type="text/css" rel="Stylesheet" href="css/jquery.layout.css" />
 
@@ -13,172 +14,10 @@
     <script type="text/javascript">
       $(function () {
         // body...
-        var data =[
-    {
-        "name": "系统设置",
-        "id": "0",
-        "pid": "0",
-        "isexpend":false,
-        "iconCls":"icon-file",
-        "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一",
-                "iconCls":"glyphicon-cog",
-                "isexpend":false,
-                "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一1",
-                "iconCls":"glyphicon-cog",
-                "children": [
-                {
-                  "id": "1",
-                  "pid": "0",
-                  "name": "餐单一1",
-                  "isexpend":true,
-                  "children": [
-                {
-                  "id": "1",
-                  "pid": "0",
-                  "name": "餐单一1",
-                  "children": [
-                {
-                  "id": "1",
-                  "pid": "0",
-                  "name": "餐单一1",
-                  "children": [
-                {
-                  "id": "1",
-                  "pid": "0",
-                  "name": "餐单一1",
-                  "children": [
-                {
-                  "id": "1",
-                  "pid": "0",
-                  "name": "餐单一1",
-
-                }]
-                }]
-                }]
-                }]
-                }]
-            }]
-                
-            },
-            {
-                "id": "2",
-                "pid": "0",
-                "name": "餐单二",
-                "url":"http://www.baidu.com"
-            },
-            {
-                "id": "3",
-                "pid": "0",
-                "url":"http://www.xfeixiang.com",
-                "name": "餐单三"
-            }
-        ]
-    },{
-        "name": "系统设置",
-        "id": "0",
-        "pid": "0",
-        "isexpend":true,
-        "iconCls":"glyphicon-cog",
-        "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一",
-                "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一1",
-                "iconCls":"glyphicon-cog"
-            }]
-                
-            },
-            {
-                "id": "2",
-                "pid": "0",
-                "name": "餐单二"
-            },
-            {
-                "id": "3",
-                "pid": "0",
-                "name": "餐单三"
-            }
-        ]
-    },{
-        "name": "系统设置",
-        "id": "0",
-        "pid": "0",
-        "isexpend":true,
-        "iconCls":"glyphicon-cog",
-        "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一",
-                "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一1",
-                "iconCls":"glyphicon-cog"
-            }]
-                
-            },
-            {
-                "id": "2",
-                "pid": "0",
-                "name": "餐单二"
-            },
-            {
-                "id": "3",
-                "pid": "0",
-                "name": "餐单三"
-            }
-        ]
-    },{
-        "name": "系统设置",
-        "id": "0",
-        "pid": "0",
-        "isexpend":true,
-        "iconCls":"glyphicon-cog",
-        "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一",
-                "children": [
-            {
-                "id": "1",
-                "pid": "0",
-                "name": "餐单一1",
-                "iconCls":"glyphicon-cog"
-            }]
-                
-            },
-            {
-                "id": "2",
-                "pid": "0",
-                "name": "餐单二"
-            },
-            {
-                "id": "3",
-                "pid": "0",
-                "name": "餐单三"
-            }
-        ]
-    }
-];
-        $("#menu").navigation(data,"data");
+      
+        //$("#menu").navigation(data,"data");
         $('.layout').height(document.body.clientHeight);
-        //$("#menu").navigation("navigation.htm","url");
+        $('#menu').initTree('navigation.htm','url');
       });
     </script>
 </head>
