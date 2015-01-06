@@ -16,7 +16,7 @@ a{
 .header{
     height: 35px;
     line-height: 35px;
-    background: #777;
+    background: #6699cc;
 }
 .contianer960{
     width: 100%;
@@ -30,7 +30,7 @@ a{
     max-width: 300px;
     width: auto;
     min-height: 500px;
-    background: #777;
+    background: #99cc99;
     
     height: 90% !important;
     border-right: 1px solid #000;
@@ -52,7 +52,7 @@ a{
     list-style: none;
     margin: 0;
     padding: 5px;
-    background: #0090ff;
+    background: #00CC99;
 }
 .right h2{
     margin: 0;
@@ -134,9 +134,9 @@ a{
     color: #000;
 }
 .menu ul li span div {
-    background: -moz-linear-gradient(center top , #373737, #212121) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: -moz-linear-gradient(center top , ##3399CC, ##3399CC) repeat scroll 0 0 rgba(0, 0, 0, 0);
     color:#fff;
-    background: #373737;
+    background: #3399CC;
     transition:all 0.2s ease-in-out 0s;    
 }
 .menu ul li span div span{
@@ -195,6 +195,9 @@ a{
     -webkit-animation:fade-in 1s;/*针对webkit内核*/
     transition: opacity 1s linear 0s;
     padding: 8px !important;
+    border-radius:5px; /* W3C syntax */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    -moz-border-radius: 15px;      /* Gecko browsers */
 }
 .fd li{
     padding: 5px;
@@ -217,4 +220,12 @@ a{
 }
 .hover:hover{
     background:  url('icons/icon24_24.ico') no-repeat scroll 0 10px #eee !important;
+    border-radius:5px; /* W3C syntax */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    -moz-border-radius: 15px;      /* Gecko browsers */
+}
+.border-radius{
+    border-radius:5px; /* W3C syntax */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    -moz-border-radius: 15px;      /* Gecko browsers */
 }
