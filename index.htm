@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link type="text/css" rel="Stylesheet" href="css/bootstrap.min.css" />
     <link type="text/css" rel="Stylesheet" href="css/jquery.layout.css" />
-
+    <link type="text/css" rel="Stylesheet" href="css/icons.css" />
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     
     <script type="text/javascript" src="js/jquery.tree.js"></script>
@@ -14,10 +14,93 @@
     <script type="text/javascript">
       $(function () {
         // body...
-      
-        //$("#menu").navigation(data,"data");
+       var data =[
+    {
+        "name": "系统设置",
+        "id": "0",
+        "pid": "0",
+        "isexpend":false,
+        "iconCls":"glyphicon-cog",
+        "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一",
+                "iconCls":"",
+                "children": [
+            {
+                "id": "1",
+                "pid": "0",
+                "name": "餐单一1",
+                "iconCls":"glyphicon-cog",
+                "children": [
+                {
+                  "id": "1",
+                  "pid": "0",
+                  "name": "餐单一1"
+                }]
+            }]                
+            },
+            {
+                "id": "2",
+                "pid": "0",
+                "name": "餐单二",
+                "url":"http://www.baidu.com"
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            },
+            {
+                "id": "3",
+                "pid": "0",
+                "url":"http://www.xfeixiang.com",
+                "name": "餐单三"
+
+            }
+        ]
+    }
+];
+        $("#menu").initTree(data,"data");
         $('.layout').height(document.body.clientHeight);
-        $('#menu').initTree('navigation.htm','url');
+        //$('#menu').initTree('navigation.htm','url');
       });
     </script>
 </head>
@@ -31,7 +114,7 @@
    <div class="contianer960">
    <!--左侧-->
    <div class="left">
-        <div class="menu-title">系统菜单</div>
+        <div class="menu-title" style="display:none">系统菜单</div>
    		<div class="menu" id="menu">
    			
    		</div>

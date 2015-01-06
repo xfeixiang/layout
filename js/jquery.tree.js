@@ -9,10 +9,10 @@ $.fn.extend ({
 				return $(this)._typeofUrl(urlordata,this);
 			break;
 			case 'data':
-				return $(this)._getParentLength(urlordata,this);				
-				return $(this).append(htmls);
-				return $(this)._setMenuPanel();
-				return $(this)._setHiddeOrShowMenu();
+				$(this)._getParentLength(urlordata,this);				
+				$(this).append(htmls);
+				$(this)._setMenuPanel();
+				$(this)._setHiddeOrShowMenu();
 			break;
 			default:
 				return $(this)._typeofUrl(urlordata,this);				
@@ -37,12 +37,12 @@ $.fn.extend ({
 			//alert($(obj).html());
 			//判断是否是父节点，如果相等则是 反之则否
 			if((data[i].pid == data[i].id)|| (data[i].children != null && data[i].children.length > 0)){				
-				htmls += '<li data-text="'+ data[i].name + '"' + 'isexpend="'+ data[i].isexpend +'"><span style="' + 'padding: 0 5px; class=glyphicon + data[i].iconCls' +'"></span>'+data[i].name;			
+				htmls += "<li data-text=\""+ data[i].name +"\" isexpend=\""+ isexpend +"\"><span style=\"padding: 0 5px;\" class=\"glyphicon "+ data[i].iconCls +"\"></span>"+data[i].name;			
 				if(data[i].children != null){
 					$(obj)._typeofData(data[i].children,obj);
 				}
 			} else {
-				htmls += '<li data-text="'+ data[i].name +'"><a link-href="'+ data[i].url +'">'+data[i].name+'</a></li>';	
+				htmls += "<li class=\""+ data[i].iconCls +"\" data-text=\""+ data[i].name +"\"><a link-href=\""+ data[i].url +"\">"+data[i].name+"</a></li>";	
 			}
 		}
 	} else {
@@ -93,6 +93,10 @@ $.fn.extend ({
 		});
 		//遍历子菜单
 		$(this).find('a').parent('li').each(function(i,element) {
+			if($(this).hasClass('hover')){
+				$(this).removeClass('hover');
+			}
+			$(this).addClass('hover');
 			$(element).bind('click',function(){
 				$(obj).find('li').each(function(){
 					if($(this).hasClass('click')){
@@ -100,7 +104,9 @@ $.fn.extend ({
 					}
 				});
 				
-				$(this).attr('class','click');
+				var cl = $(this).attr('class');
+				cl+=' click';
+				$(this).attr('class',cl);
 				//加载自定义url
 				var url = $(this).children('a').attr('link-href');
 				var title = $(this).children('a').html();

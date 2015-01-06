@@ -5,7 +5,7 @@ html,body,.layout{
     background: #eaeaea;
 }
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .layout{
@@ -63,6 +63,9 @@ a{
 }
 .right h2 a{
     color: #fff;
+    font-size: medium;
+    font-weight: normal;
+    padding: 2px;
     text-decoration: none;
 }
 .default:before{
@@ -72,7 +75,7 @@ a{
 .default,.default:before,.default:hover{
     color: #fff;
     text-decoration: none;
-    "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif
+    font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif
 }
 .footer{
     width: 100%;
@@ -134,8 +137,12 @@ a{
     background: -moz-linear-gradient(center top , #373737, #212121) repeat scroll 0 0 rgba(0, 0, 0, 0);
     color:#fff;
     background: #373737;
-    transition:all 0.2s ease-in-out 0s;
-    
+    transition:all 0.2s ease-in-out 0s;    
+}
+.menu ul li span div span{
+    width: 16px;
+    height: 16px;
+   
 }
 .menu ul li ul li:visited{
     background: #eee;
@@ -143,6 +150,7 @@ a{
 }
 .menu li ul li{
     background:none;
+    border-bottom: 1px dotted #eee;
 }
 .bs-glyphicons .glyphicon {
     font-size: 24px;
@@ -158,8 +166,10 @@ a{
     padding-right: 8px;
 }
 .click{
-    background: #eee !important;
-    transition: width 2s, height 2s, transform 2s;
+    /*background: #eee !important;*/
+    background:  url('icons/icon24_24.ico') no-repeat scroll 0 10px #eee !important;
+    
+    transition: width 1s, height 1s, transform 0.5s;
 }
 /**----------------------**/
 .right iframe{
@@ -188,6 +198,23 @@ a{
 }
 .fd li{
     padding: 5px;
+    text-indent: 15px;
+    cursor: pointer;
 }
-iframe
 
+.icon-file{
+    background:  url('icons/icon24_24.ico') no-repeat scroll 0 0 #373737;
+}
+/**************************      扩展样式           *******************************/
+.icon-left,.glyphicon-cog{
+      float: left;
+      margin: 0 5px;
+      top: 12px;
+      vertical-align: middle;
+}
+.menu ul{
+    margin: 0px;
+}
+.hover:hover{
+    background:  url('icons/icon24_24.ico') no-repeat scroll 0 10px #eee !important;
+}
