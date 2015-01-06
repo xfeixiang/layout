@@ -33,7 +33,7 @@ a{
     background: #99cc99;
     
     height: 90% !important;
-    border-right: 1px solid #000;
+    border-right: 1px solid #eee;
     position: absolute;
     width: 400px;
 }
@@ -107,7 +107,7 @@ a{
     background: #fff;
 }
 .menu{
-    height: 93% !important;
+    height: 100% !important;
     overflow: auto;
 }
 .menu-title{
@@ -126,7 +126,7 @@ a{
 }
 .menu ul{
     padding: 0 3px 5px 2px;
-    
+    margin-left: 0px !important;
     width: 100%;
 }
 .menu ul li{
@@ -142,7 +142,7 @@ a{
 .menu ul li span div span{
     width: 16px;
     height: 16px;
-   
+    margin: 0 6px 3px 0;
 }
 .menu ul li ul li:visited{
     background: #eee;

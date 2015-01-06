@@ -18,7 +18,7 @@
 	
 	$('#jj').find('li').remove();
 	$('#jj').append('<li>'+path+'</li>');
-	console.log('测试输出');
+	//console.log('测试输出');
 	document.getElementById('mainFrame').src = url;
 }
 }); 
