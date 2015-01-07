@@ -25,6 +25,7 @@ require(['jquery','dialog'],function  () {
 		$('#windowXX').bind('click',function(){
 			defineV.windowA();
 		});
+
 		<!--初始化树-->
             var data =[{
         "name": "个人中心",
@@ -58,6 +59,11 @@ require(['jquery','dialog'],function  () {
 ];
         $("#menu").initTree(data,"data");
         $('.layout').height(document.body.clientHeight);
+
+        <!--退出按钮功能-->
+        $('#loginout').bind('click',function(){
+        	defineV.confirmA();
+        });
 	});
 });
 });

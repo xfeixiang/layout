@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link type="text/css" rel="Stylesheet" href="css/bootstrap.min.css" />
     <link type="text/css" rel="Stylesheet" href="css/jquery.layout.css" />
+    <link type="text/css" rel="Stylesheet" href="css/jquery.dialog.css" />
     <link type="text/css" rel="Stylesheet" href="css/icons.css" />
     <!--异步加载主函数 IE不支持async 只支持defer-->
     <script type="text/javascript" data-main="js/main" defer async="true"  src="js/require.js"></script>
@@ -18,7 +19,7 @@
    <div class="header">
     <a href="#"><span class="glyphicon glyphicon-comment defineAuto"></span>系统消息</a>
         <a href="#"><span class="glyphicon glyphicon-hand-right defineAuto"></span>预览网站</a>
-        <a href="#"><span class="glyphicon glyphicon-log-out defineAuto"></span>退出</a>        
+        <a href="#" id="loginout"><span class="glyphicon glyphicon-log-out defineAuto"></span>退出</a>        
    </div>
    <div class="contianer960">
    <!--左侧-->

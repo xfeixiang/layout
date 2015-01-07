@@ -8,13 +8,15 @@
         confirmX = jQuery.dialog.confirm;
         windowX = jQuery.dialog.window;
 　　　　var alertW = function () {
-                alertX("提示信息", "这是自定义对话框",true, function () {
-                    $.dialog.alert("提示信息", "关闭了");
+                alertX("确认退出？", "确认退出？",true, function (r) {
+                    if(r){
+                        $.dialog.alert("提示信息", "退出成功！");
+                    }                    
                 });
         };
         var confirmW = function () {
-                confirmX("提示信息", "这是确认框", true,function () {
-                    $.dialog.alert("提示信息", "确认了",true);
+                confirmX("确认退出？", "确认退出？", true,function () {
+                    $.dialog.alert("提示信息", "退出成功！",true);
                 });
         };
         var windowW = function () {
