@@ -37,12 +37,12 @@ $.fn.extend ({
 			//alert($(obj).html());
 			//判断是否是父节点，如果相等则是 反之则否
 			if((data[i].pid == data[i].id)|| (data[i].children != null && data[i].children.length > 0)){				
-				htmls += "<li data-text=\""+ data[i].name +"\" isexpend=\""+ isexpend +"\"><span style=\"padding: 0 5px;\" class=\"glyphicon "+ data[i].iconCls +"\"></span>"+data[i].name;			
+				htmls += "<li data-text=\""+ data[i].name +"\" isexpend=\""+ isexpend +"\"><span style=\"padding: 0 5px;\" class=\"border-radius glyphicon "+ data[i].iconCls +"\"></span>"+data[i].name;			
 				if(data[i].children != null){
 					$(obj)._typeofData(data[i].children,obj);
 				}
 			} else {
-				htmls += "<li class=\""+ data[i].iconCls +"\" data-text=\""+ data[i].name +"\"><a link-href=\""+ data[i].url +"\">"+data[i].name+"</a></li>";	
+				htmls += "<li data-text=\""+ data[i].name +"\"><span class=\"glyphicon defineAuto "+ data[i].iconCls +"\"></span><a link-href=\""+ data[i].url +"\">"+data[i].name+"</a><span class=\"\"></span></li>";	
 			}
 		}
 	} else {
@@ -59,7 +59,7 @@ $.fn.extend ({
 				isexpend = 'false';
 			}
 			//alert(data.iconCls);
-			htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-plus extend"></span></div></span> ';						
+			htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-chevron-up extend"></span></div></span> ';						
 			if(data[i].children!=null && data[i].children.length > 0){
 				$(this)._typeofData(data[i].children,obj);
 			}
@@ -123,10 +123,10 @@ $.fn.extend ({
 				$(this).children('ul').css('border-left','1px dotted #000');
 				var j = $(this).attr('isexpend');
 				if(j == 'true'){
-					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-plus');
+					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-chevron-up');
 				} else if(j == 'false'){			
 				//alert(j);		
-					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-minus');
+					$(this).children('span').children('div').children('span:nth-child(2)').addClass('gglyphicon-chevron-down');
 				}
 
 				$(element).bind('click',function(){	
@@ -141,14 +141,14 @@ $.fn.extend ({
 					//alert("true");
 					$(this).attr('isexpend',false);	
 					$(this).children('ul').css('display','');
-					$(this).children('span').children('div').children('span:nth-child(2)').removeClass('glyphicon-plus');
-					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-minus');
+					$(this).children('span').children('div').children('span:nth-child(2)').removeClass('glyphicon-chevron-up');
+					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-chevron-down');
 					}else if(p == 'false'){
 						//alert("false");
 						$(this).attr('isexpend',true);	
 						$(this).children('ul').css('display','none');
-						$(this).children('span').children('div').children('span:nth-child(2)').removeClass('glyphicon-minus');
-						$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-plus')
+						$(this).children('span').children('div').children('span:nth-child(2)').removeClass('glyphicon-chevron-down');
+						$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-chevron-up')
 					}
 				}
 				return false;
