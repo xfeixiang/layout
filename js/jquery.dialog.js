@@ -25,7 +25,7 @@
 			    if (callback) callback(result)
 			})
         },
-        window: function (title, message, value, ishowbtn=false, callback) {
+        window: function (title, message, value, ishowbtn, callback) {
             if (title == '' || title == null) {
                 title = "提示窗口"
             }
