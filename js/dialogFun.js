@@ -4,9 +4,9 @@
         var confirmX = null;
         //定义窗口对象
         var windowX = null;
-        alertX = jQuery.dialog.alert;
-        confirmX = jQuery.dialog.confirm;
-        windowX = jQuery.dialog.window;
+        alertX = $.dialog.alert;
+        confirmX = $.dialog.confirm;
+        windowX = $.dialog.window;
 　　　　var alertW = function () {
                 alertX("确认退出？", "确认退出？",true, function (r) {
                     if(r){

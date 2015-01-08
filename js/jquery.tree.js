@@ -59,7 +59,12 @@ $.fn.extend ({
 				isexpend = 'false';
 			}
 			//alert(data.iconCls);
-			htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-chevron-up extend"></span></div></span> ';						
+			if(isexpend){
+				htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-chevron-up extend"></span></div></span> ';
+			}else{
+				htmls += '<li data-text="'+ data[i].name + '" isexpend="'+ isexpend +'"><span style="line-height:35px"><div><span style="padding: 0 5px;" class="glyphicon '+ data[i].iconCls + '"></span>'+data[i].name+'<span class="glyphicon glyphicon-chevron-down extend"></span></div></span> ';
+			}
+									
 			if(data[i].children!=null && data[i].children.length > 0){
 				$(this)._typeofData(data[i].children,obj);
 			}
@@ -122,9 +127,13 @@ $.fn.extend ({
 		$(this).find('ul').parent('li').each(function(i,element){				
 				$(this).children('ul').css('border-left','1px dotted #000');
 				var j = $(this).attr('isexpend');
-				if(j == 'true'){
+				$(this).children('span').children('div').children('span:nth-child(2)').removeClass('gglyphicon-chevron-down');
+				$(this).children('span').children('div').children('span:nth-child(2)').removeClass('gglyphicon-chevron-up');
+					
+				if(j == 'true'){			
+						
 					$(this).children('span').children('div').children('span:nth-child(2)').addClass('glyphicon-chevron-up');
-				} else if(j == 'false'){			
+				} else{			
 				//alert(j);		
 					$(this).children('span').children('div').children('span:nth-child(2)').addClass('gglyphicon-chevron-down');
 				}

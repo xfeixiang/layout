@@ -9,8 +9,8 @@ require.config({
     }
 });
 
-require(['jquery','dialog'],function  () {
-	require(['tab','tree'],function(){
+require(['jquery'],function  () {
+	require(['dialog','tab','tree'],function(){
 	// body...
 	require(['defineV'],function (defineV) {
 		<!--弹出框-->
