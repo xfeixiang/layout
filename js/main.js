@@ -57,7 +57,8 @@ require(['jquery'],function  () {
         ]
     }
 ];
-        $("#menu").initTree(data,"data");
+        //$("#menu").initTree(data,"data");
+         $("#menu").initTree('navigation.htm',"url");
         $('.layout').height(document.body.clientHeight);
 
         <!--退出按钮功能-->

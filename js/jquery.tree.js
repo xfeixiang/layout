@@ -4,6 +4,7 @@ var htmls = "";
 var bootpath = "";
 $.fn.extend ({
 	initTree:function(urlordata,type){		
+		$(this).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #000; height:100%;opacity:0.5;padding:100% 0\">正在加载中...</div>");
 		switch(type){
 			case 'url':
 				return $(this)._typeofUrl(urlordata,this);
@@ -11,19 +12,34 @@ $.fn.extend ({
 			case 'data':
 				$(this)._getParentLength(urlordata,this);				
 				$(this).append(htmls);
+				$('#alertmsg123').html('加载完成');
+				$(this).find('#alertmsg123').remove();
 				$(this)._setMenuPanel();
 				$(this)._setHiddeOrShowMenu();
 			break;
 			default:
 				return $(this)._typeofUrl(urlordata,this);				
-			break;			
+			break;
 		}
 	},
-	_typeofUrl:function(url,obj){
-		$(obj).load(url,null,function(response,status,xhr){
-			$(this)._setMenuPanel();
-			$(this)._setHiddeOrShowMenu();
+	_typeofUrl:function(url,obj){		
+		setTimeout(function(){
+		$(obj).load(url,null,function(response,status,xhr){	
+			if(status=="success"){
+				$(obj).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #000; height:100%;opacity:0.5;padding:100% 0\">加载完成...</div>");
+				//alert($('#alertmsg123').html());
+				$(this)._setMenuPanel();
+				$(this)._setHiddeOrShowMenu();
+				setTimeout(function(){
+					$(obj).find('#alertmsg123').remove();
+				},300);
+			}			
+			if(status=="error") {
+				$('#alertmsg123').html("Error: "+xhr.status+": "+xhr.statusText);
+			}      				
+				
 		});
+	},300);
 	},
 	_typeofData:function(data,obj){				
 		//遍历树结构
@@ -49,9 +65,10 @@ $.fn.extend ({
 
 		//htmls += "<li><span class=\"glyphicon glyphicon-asterisk\"></span>"+data[i].name;			
 	}
-		htmls += '</li></ul>';
+		htmls += '</li></ul>';		
 	},
 	_getParentLength:function(data,obj){
+		
 		htmls+="<ul>";
 		for (var i = 0; i < data.length; i++) {
 			var isexpend = data[i].isexpend;
