@@ -4,7 +4,7 @@ var htmls = "";
 var bootpath = "";
 $.fn.extend ({
 	initTree:function(urlordata,type){		
-		$(this).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #000; height:100%;opacity:0.5;padding:100% 0\">正在加载中...</div>");
+		$(this).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #fff; height:100%;opacity:0.5;padding:100% 0\">正在加载中...</div>");
 		switch(type){
 			case 'url':
 				return $(this)._typeofUrl(urlordata,this);
@@ -26,7 +26,7 @@ $.fn.extend ({
 		setTimeout(function(){
 		$(obj).load(url,null,function(response,status,xhr){	
 			if(status=="success"){
-				$(obj).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #000; height:100%;opacity:0.5;padding:100% 0\">加载完成...</div>");
+				$(obj).append("<div id=\"alertmsg123\" style=\"position:absolute;_position:absolute;z-index:1000;width:100%;text-align:center;top:0px;background:url('css/icons/loading.png') no-repeat scroll center center #fff; height:100%;opacity:0.5;padding:100% 0\">加载完成...</div>");
 				//alert($('#alertmsg123').html());
 				$(this)._setMenuPanel();
 				$(this)._setHiddeOrShowMenu();
